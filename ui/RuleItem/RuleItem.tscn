@@ -1,0 +1,93 @@
+[gd_scene load_steps=3 format=3 uid="uid://hxf2ymxhoqmc"]
+
+[ext_resource type="Script" path="res://ui/RuleItem/RuleItem.gd" id="1_ddyki"]
+[ext_resource type="Texture2D" uid="uid://dy2yjri7rutd8" path="res://assets/icons/hamburger.svg" id="2_ox5ew"]
+
+[node name="Rule" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 41.0
+grow_horizontal = 2
+script = ExtResource("1_ddyki")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="DragIcon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+tooltip_text = "Drag to reorder"
+texture = ExtResource("2_ox5ew")
+expand_mode = 3
+
+[node name="GoodLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Name of the good to trade"
+mouse_filter = 1
+
+[node name="ModeButton" type="OptionButton" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Mode of this rule"
+alignment = 2
+item_count = 5
+selected = 0
+popup/item_0/text = "none"
+popup/item_0/id = 0
+popup/item_1/text = "buy"
+popup/item_1/id = 1
+popup/item_2/text = "sell"
+popup/item_2/id = 2
+popup/item_3/text = "withdraw"
+popup/item_3/id = 3
+popup/item_4/text = "deposit"
+popup/item_4/id = 4
+
+[node name="Spacer" type="Control" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+
+[node name="QuantityLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Quantity"
+horizontal_alignment = 2
+
+[node name="QuantityBox" type="SpinBox" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(88, 0)
+layout_mode = 2
+tooltip_text = "Quantity (-1 for max)"
+min_value = -1.0
+max_value = 9999.0
+alignment = 2
+
+[node name="Spacer2" type="Control" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+
+[node name="PriceLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Price"
+horizontal_alignment = 2
+
+[node name="PriceBox" type="SpinBox" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(88, 0)
+layout_mode = 2
+tooltip_text = "Price"
+max_value = 9999.0
+alignment = 2
+
+[connection signal="item_selected" from="MarginContainer/HBoxContainer/ModeButton" to="." method="_on_mode_button_item_selected"]
+[connection signal="value_changed" from="MarginContainer/HBoxContainer/QuantityBox" to="." method="_on_quantity_box_value_changed"]
+[connection signal="value_changed" from="MarginContainer/HBoxContainer/PriceBox" to="." method="_on_price_box_value_changed"]

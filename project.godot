@@ -1,0 +1,27 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Patrician 3 AutoRoute Editor"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
+run/low_processor_mode=true
+boot_splash/show_image=false
+config/icon="res://assets/icons/icon.png"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://assets/internationalization/internationalization.en.translation", "res://assets/internationalization/internationalization.it.translation")

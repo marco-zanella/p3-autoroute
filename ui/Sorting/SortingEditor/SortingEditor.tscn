@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://bovlwnyl73st6"]
+
+[ext_resource type="PackedScene" uid="uid://ehnk3piqkvfo" path="res://ui/Sorting/SortingList/SortingList.tscn" id="1_87ouh"]
+[ext_resource type="Script" path="res://ui/Sorting/SortingEditor/SortingEditor.gd" id="1_ym51r"]
+[ext_resource type="PackedScene" uid="uid://cxakq7ra43p0" path="res://ui/Sorting/SortingNameDialog/SortingNameDialog.tscn" id="3_32ngi"]
+[ext_resource type="PackedScene" uid="uid://cydwf2wib3wkb" path="res://ui/Sorting/GoodList/GoodList.tscn" id="3_hbcaf"]
+
+[node name="SortingEditor" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ym51r")
+
+[node name="SortingList" parent="." instance=ExtResource("1_87ouh")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="GoodList" parent="." instance=ExtResource("3_hbcaf")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SortingNameDialog" parent="." instance=ExtResource("3_32ngi")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="add" from="SortingList" to="." method="_on_sorting_list_add_"]
+[connection signal="deleted" from="SortingList" to="." method="_on_sorting_list_delete"]
+[connection signal="rename" from="SortingList" to="." method="_on_sorting_list_rename"]
+[connection signal="selected" from="SortingList" to="." method="_on_sorting_list_selected"]
+[connection signal="set_default" from="SortingList" to="." method="_on_sorting_list_set_default"]
+[connection signal="saved" from="GoodList" to="." method="_on_good_list_saved"]
+[connection signal="cancelled" from="SortingNameDialog" to="." method="clear_connections"]

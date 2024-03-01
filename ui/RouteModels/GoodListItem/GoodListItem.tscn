@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://ecshvja7mm3k"]
+
+[ext_resource type="Script" path="res://ui/RouteModels/GoodListItem/GoodListItem.gd" id="1_oxueh"]
+
+[node name="GoodListItem" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("1_oxueh")
+show_quantity = true
+show_buying_price = true
+show_selling_price = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="GoodCheckBox" type="CheckBox" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Enable this good"
+theme_override_constants/h_separation = 5
+
+[node name="QuantitySpinBox" type="SpinBox" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+tooltip_text = "Quantity"
+min_value = -1.0
+max_value = 9999.0
+alignment = 2
+editable = false
+
+[node name="BuyingPriceSpinBox" type="SpinBox" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+tooltip_text = "Buying price"
+min_value = 1.0
+max_value = 9999.0
+value = 1.0
+alignment = 2
+editable = false
+
+[node name="SellingPriceSpinBox" type="SpinBox" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+tooltip_text = "Selling price"
+min_value = 1.0
+max_value = 9999.0
+value = 1.0
+alignment = 2
+editable = false
+
+[connection signal="toggled" from="MarginContainer/HBoxContainer/GoodCheckBox" to="." method="_on_good_check_box_toggled"]

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Pricing" load_steps=2 format=3 uid="uid://c8nv6yx2qbneu"]
+
+[ext_resource type="Script" path="res://scripts/Pricing.gd" id="1_tiwjb"]
+
+[resource]
+script = ExtResource("1_tiwjb")
+id = "default"
+is_default = true
+buying = Array[int]([130, 1000, 500, 50, 25, 120, 200, 250, 280, 900, 100, 70, 350, 280, 1000, 60, 900, 450, 220, 80, 1, 1, 1, 1])
+selling = Array[int]([140, 1200, 550, 55, 30, 130, 400, 360, 360, 1150, 140, 80, 440, 330, 1200, 65, 1100, 600, 260, 90, 1000, 1000, 1000, 1000])

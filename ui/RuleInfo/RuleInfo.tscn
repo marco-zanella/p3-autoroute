@@ -1,0 +1,116 @@
+[gd_scene load_steps=3 format=3 uid="uid://co7mmgvm0rcoq"]
+
+[ext_resource type="Texture2D" uid="uid://da3m42wimljk6" path="res://assets/icons/left-arrow.svg" id="1_5vswj"]
+[ext_resource type="Script" path="res://ui/RuleInfo/RuleInfo.gd" id="1_bp0wm"]
+
+[node name="RuleInfo" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_bp0wm")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="PreviousButton" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+texture_normal = ExtResource("1_5vswj")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TownLabel" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+
+[node name="NextButton" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+texture_normal = ExtResource("1_5vswj")
+ignore_texture_size = true
+stretch_mode = 5
+flip_h = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="SortButton" type="OptionButton" parent="HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+tooltip_text = "Order items by preset"
+allow_reselect = true
+
+[node name="Spacer" type="Control" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ModeButton" type="OptionButton" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+tooltip_text = "Apply same mode to all rules"
+alignment = 2
+item_count = 5
+selected = 0
+allow_reselect = true
+popup/item_0/text = "none"
+popup/item_0/id = 0
+popup/item_1/text = "buy"
+popup/item_1/id = 1
+popup/item_2/text = "sell"
+popup/item_2/id = 2
+popup/item_3/text = "withdraw"
+popup/item_3/id = 3
+popup/item_4/text = "deposit"
+popup/item_4/id = 4
+
+[node name="QuantityButton" type="OptionButton" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+tooltip_text = "Apply same quantity to all rules"
+alignment = 2
+item_count = 3
+selected = 0
+allow_reselect = true
+popup/item_0/text = "quantity"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_1/text = "0"
+popup/item_1/id = 1
+popup/item_2/text = "max"
+popup/item_2/id = 2
+
+[node name="PricePresetsButton" type="OptionButton" parent="HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+tooltip_text = "Apply price preset"
+alignment = 2
+fit_to_longest_item = false
+allow_reselect = true
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RulesContainer" type="VBoxContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="pressed" from="HBoxContainer/PreviousButton" to="." method="_on_previous_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="item_selected" from="HBoxContainer2/SortButton" to="." method="_on_sort_button_item_selected"]
+[connection signal="item_selected" from="HBoxContainer2/ModeButton" to="." method="_on_mode_button_item_selected"]
+[connection signal="item_selected" from="HBoxContainer2/QuantityButton" to="." method="_on_quantity_button_item_selected"]
+[connection signal="item_selected" from="HBoxContainer2/PricePresetsButton" to="." method="_on_price_presets_button_item_selected"]

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Sorting" load_steps=2 format=3 uid="uid://b406o8bsc8dcq"]
+
+[ext_resource type="Script" path="res://scripts/Sorting.gd" id="1_fuvul"]
+
+[resource]
+script = ExtResource("1_fuvul")
+id = "internal"
+is_default = false
+goods = null

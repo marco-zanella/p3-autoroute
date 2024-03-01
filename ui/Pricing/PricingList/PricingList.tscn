@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://dggc3gpncwcfa"]
+
+[ext_resource type="Texture2D" uid="uid://u8mnfrigg8te" path="res://assets/icons/add.svg" id="1_awhjx"]
+[ext_resource type="Script" path="res://ui/Pricing/PricingList/PricingList.gd" id="1_g5o5y"]
+
+[node name="PricingList" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g5o5y")
+
+[node name="AvailablePricingsLabel" type="Label" parent="."]
+layout_mode = 2
+text = "Available pricings:"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PricingContainer" type="VBoxContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 2
+
+[node name="AddButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+tooltip_text = "Add a new pricing"
+text = "add"
+icon = ExtResource("1_awhjx")
+expand_icon = true
+
+[connection signal="pressed" from="HBoxContainer/AddButton" to="." method="_on_add_button_pressed"]

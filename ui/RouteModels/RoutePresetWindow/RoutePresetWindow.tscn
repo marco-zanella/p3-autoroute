@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmlvshhhaf1t7"]
+
+[ext_resource type="Script" path="res://ui/RouteModels/RoutePresetWindow/RoutePresetWindow.gd" id="1_hxgoh"]
+[ext_resource type="PackedScene" uid="uid://codnneuronewe" path="res://ui/RouteModels/Sucker/Sucker.tscn" id="2_1ea2j"]
+[ext_resource type="PackedScene" uid="uid://b08v58hlvri7c" path="res://ui/RouteModels/SuckerToWarehouse/SuckerToWarehouse.tscn" id="3_ubegj"]
+[ext_resource type="PackedScene" uid="uid://clk3s34ps84o" path="res://ui/RouteModels/DayTrader/DayTrader.tscn" id="4_7q8x0"]
+[ext_resource type="PackedScene" uid="uid://da6lrjk88vu0u" path="res://ui/RouteModels/Seller/Seller.tscn" id="5_qv2q2"]
+[ext_resource type="PackedScene" uid="uid://bo0dd82a5sc0" path="res://ui/RouteModels/Supplier/Supplier.tscn" id="6_nge85"]
+
+[node name="RoutePresetWindow" type="Window"]
+title = "Route Preset"
+initial_position = 2
+size = Vector2i(1024, 576)
+transient = true
+script = ExtResource("1_hxgoh")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sucker" type="MarginContainer" parent="TabContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Sucker" parent="TabContainer/Sucker" instance=ExtResource("2_1ea2j")]
+layout_mode = 2
+
+[node name="SuckerToWarehouse" type="MarginContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="SuckerToWarehouse" parent="TabContainer/SuckerToWarehouse" instance=ExtResource("3_ubegj")]
+layout_mode = 2
+
+[node name="DayTrader" type="MarginContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="DayTrader" parent="TabContainer/DayTrader" instance=ExtResource("4_7q8x0")]
+layout_mode = 2
+
+[node name="Seller" type="MarginContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Seller" parent="TabContainer/Seller" instance=ExtResource("5_qv2q2")]
+layout_mode = 2
+
+[node name="Supplier" type="MarginContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Supplier" parent="TabContainer/Supplier" instance=ExtResource("6_nge85")]
+layout_mode = 2
+
+[connection signal="close_requested" from="." to="." method="_on_preset_cancelled"]
+[connection signal="cancelled" from="TabContainer/Sucker/Sucker" to="." method="_on_preset_cancelled"]
+[connection signal="confirmed" from="TabContainer/Sucker/Sucker" to="." method="_on_preset_confirmed"]
+[connection signal="cancelled" from="TabContainer/SuckerToWarehouse/SuckerToWarehouse" to="." method="_on_preset_cancelled"]
+[connection signal="confirmed" from="TabContainer/SuckerToWarehouse/SuckerToWarehouse" to="." method="_on_preset_confirmed"]
+[connection signal="cancelled" from="TabContainer/DayTrader/DayTrader" to="." method="_on_preset_cancelled"]
+[connection signal="confirmed" from="TabContainer/DayTrader/DayTrader" to="." method="_on_preset_confirmed"]
+[connection signal="cancelled" from="TabContainer/Seller/Seller" to="." method="_on_preset_cancelled"]
+[connection signal="confirmed" from="TabContainer/Seller/Seller" to="." method="_on_preset_confirmed"]
+[connection signal="cancelled" from="TabContainer/Supplier/Supplier" to="." method="_on_preset_cancelled"]
+[connection signal="confirmed" from="TabContainer/Supplier/Supplier" to="." method="_on_preset_confirmed"]

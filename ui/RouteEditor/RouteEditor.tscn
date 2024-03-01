@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://bj7ed8b2v65"]
+
+[ext_resource type="PackedScene" uid="uid://cltktpk3lvkmv" path="res://ui/RouteList/RouteList.tscn" id="1_txj6x"]
+[ext_resource type="Script" path="res://ui/RouteEditor/RouteEditor.gd" id="1_yu3od"]
+[ext_resource type="PackedScene" uid="uid://cqjisq4govx0l" path="res://ui/RouteInfo/RouteInfo.tscn" id="2_x4hqf"]
+[ext_resource type="PackedScene" uid="uid://co7mmgvm0rcoq" path="res://ui/RuleInfo/RuleInfo.tscn" id="3_31irh"]
+[ext_resource type="Script" path="res://ui/RouteEditor/RouteBinaryMapperNode.gd" id="5_x2oq4"]
+
+[node name="RouteEditor" type="HSplitContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_yu3od")
+
+[node name="RouteList" parent="." node_paths=PackedStringArray("route_mapper") instance=ExtResource("1_txj6x")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 1
+route_mapper = NodePath("../RouteBinaryMapperNode")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 2
+
+[node name="RouteInfo" parent="HSplitContainer" node_paths=PackedStringArray("data_mapper") instance=ExtResource("2_x4hqf")]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+data_mapper = NodePath("../../RouteBinaryMapperNode")
+
+[node name="RuleInfo" parent="HSplitContainer" instance=ExtResource("3_31irh")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="RouteBinaryMapperNode" type="Node" parent="."]
+script = ExtResource("5_x2oq4")
+
+[connection signal="folder_selected" from="RouteList" to="." method="_on_folder_selected"]
+[connection signal="new_route" from="RouteList" to="." method="_on_route_created"]
+[connection signal="route_deleted" from="RouteList" to="." method="_on_route_deleted"]
+[connection signal="route_duplicated" from="RouteList" to="." method="_on_route_duplicated"]
+[connection signal="route_renamed" from="RouteList" to="." method="_on_route_renamed"]
+[connection signal="route_selected" from="RouteList" to="." method="_on_route_selected"]
+[connection signal="applied_preset" from="HSplitContainer/RouteInfo" to="." method="_on_route_info_applied_preset"]
+[connection signal="route_saved" from="HSplitContainer/RouteInfo" to="." method="_on_route_saved"]
+[connection signal="trade_stop_add" from="HSplitContainer/RouteInfo" to="." method="_on_trade_stop_added"]
+[connection signal="trade_stop_deleted" from="HSplitContainer/RouteInfo" to="." method="_on_trade_stop_deleted"]
+[connection signal="trade_stop_duplicated" from="HSplitContainer/RouteInfo" to="." method="_on_trade_stop_duplicated"]
+[connection signal="trade_stop_moved" from="HSplitContainer/RouteInfo" to="." method="_on_trade_stop_moved"]
+[connection signal="trade_stop_selected" from="HSplitContainer/RouteInfo" to="." method="_on_trade_stop_selected"]
+[connection signal="next" from="HSplitContainer/RuleInfo" to="." method="_on_rule_info_next"]
+[connection signal="previous" from="HSplitContainer/RuleInfo" to="." method="_on_rule_info_previous"]

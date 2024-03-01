@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqjisq4govx0l"]
+
+[ext_resource type="Script" path="res://ui/RouteInfo/RouteInfo.gd" id="1_h6csq"]
+[ext_resource type="Texture2D" uid="uid://c4twkal0jveqd" path="res://assets/icons/save.svg" id="2_0g8is"]
+[ext_resource type="Texture2D" uid="uid://j46dsrkio5cb" path="res://assets/icons/template.svg" id="3_tjvwk"]
+[ext_resource type="PackedScene" uid="uid://dmlvshhhaf1t7" path="res://ui/RouteModels/RoutePresetWindow/RoutePresetWindow.tscn" id="4_a74ls"]
+[ext_resource type="Texture2D" uid="uid://u8mnfrigg8te" path="res://assets/icons/add.svg" id="4_ibqh8"]
+
+[node name="RouteInfo" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+script = ExtResource("1_h6csq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SaveButton" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+tooltip_text = "Save changes to this route"
+text = "save"
+icon = ExtResource("2_0g8is")
+expand_icon = true
+
+[node name="PresetsButton" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+tooltip_text = "Applies a route template"
+text = "models"
+icon = ExtResource("3_tjvwk")
+expand_icon = true
+
+[node name="TradeStopsLabel" type="Label" parent="."]
+layout_mode = 2
+text = "Trade stops:"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TradeStopsContainer" type="VBoxContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AddButton" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+tooltip_text = "Add a new trade stop to this route"
+text = "add"
+icon = ExtResource("4_ibqh8")
+expand_icon = true
+
+[node name="RoutePresetWindow" parent="." instance=ExtResource("4_a74ls")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="pressed" from="HBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/PresetsButton" to="." method="_on_presets_button_pressed"]
+[connection signal="pressed" from="AddButton" to="." method="_on_add_button_pressed"]
+[connection signal="confirmed" from="RoutePresetWindow" to="." method="_on_route_preset_window_confirmed"]

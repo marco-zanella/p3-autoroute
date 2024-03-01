@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://blvdqdm855bmd"]
+
+[ext_resource type="Script" path="res://ui/Pricing/PricingNameDialog/PricingNameDialog.gd" id="1_irinh"]
+
+[node name="PricingNameDialog" type="Window"]
+title = "ID of the pricing"
+initial_position = 2
+size = Vector2i(320, 100)
+unresizable = true
+script = ExtResource("1_irinh")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "ID of the pricing"
+
+[node name="ValueEdit" type="LineEdit" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "ID of the pricing"
+placeholder_text = "ID of the pricing"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="CancelButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "cancel"
+expand_icon = true
+
+[node name="ConfirmButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "confirm"
+expand_icon = true
+
+[connection signal="close_requested" from="." to="." method="_on_cancel"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/CancelButton" to="." method="_on_cancel"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/ConfirmButton" to="." method="_on_confirm"]

@@ -1,0 +1,98 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo0dd82a5sc0"]
+
+[ext_resource type="Script" path="res://ui/RouteModels/Supplier/Supplier.gd" id="1_gmqrl"]
+[ext_resource type="PackedScene" uid="uid://0jwbsptq64e6" path="res://ui/RouteModels/GoodList/GoodList.tscn" id="2_ell3e"]
+
+[node name="Supplier" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gmqrl")
+
+[node name="DescriptionLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+text = "Transfers goods from one town to another, and vice-versa. Surplus will be stored in first town.
+For both routes select the town, then enable goods to withdraw and their maximum quantity."
+autowrap_mode = 3
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FirstTownContainer" type="VBoxContainer" parent="HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/FirstTownContainer"]
+layout_mode = 2
+
+[node name="FirstTownLabel" type="Label" parent="HSplitContainer/FirstTownContainer/HBoxContainer"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "First town:"
+
+[node name="FirstTownOptionButton" type="OptionButton" parent="HSplitContainer/FirstTownContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+alignment = 2
+
+[node name="FirstTownGoodsLabel" type="Label" parent="HSplitContainer/FirstTownContainer"]
+layout_mode = 2
+text = "Load from first town:"
+
+[node name="FirstTownGoodList" parent="HSplitContainer/FirstTownContainer" instance=ExtResource("2_ell3e")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+show_quantity = true
+
+[node name="SecondTownContainer" type="VBoxContainer" parent="HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/SecondTownContainer"]
+layout_mode = 2
+
+[node name="SecondTownLabel" type="Label" parent="HSplitContainer/SecondTownContainer/HBoxContainer"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "Second town:"
+
+[node name="SecondTownOptionButton" type="OptionButton" parent="HSplitContainer/SecondTownContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+alignment = 2
+
+[node name="SecondTownGoodsLabel" type="Label" parent="HSplitContainer/SecondTownContainer"]
+layout_mode = 2
+text = "Load from second town:"
+
+[node name="SecondTownGoodList" parent="HSplitContainer/SecondTownContainer" instance=ExtResource("2_ell3e")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+show_quantity = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 2
+
+[node name="CancelButton" type="Button" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "cancel"
+expand_icon = true
+
+[node name="ConfirmButton" type="Button" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "confirm"
+expand_icon = true
+
+[connection signal="pressed" from="HBoxContainer2/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="HBoxContainer2/ConfirmButton" to="." method="_on_confirm_button_pressed"]

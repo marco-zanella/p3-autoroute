@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1xqdtdglh74p"]
+
+[ext_resource type="Script" path="res://ui/Pricing/PricingListItem/PricingListItem.gd" id="1_2p3od"]
+[ext_resource type="Texture2D" uid="uid://cih60ski0cgmn" path="res://assets/icons/tick.svg" id="1_hhral"]
+[ext_resource type="Texture2D" uid="uid://bv2t4opxlbjug" path="res://assets/icons/edit.svg" id="2_b0pd2"]
+[ext_resource type="Texture2D" uid="uid://bd3f47xv5yb22" path="res://assets/icons/rename.svg" id="3_v4574"]
+[ext_resource type="Texture2D" uid="uid://dl5fcna2x8ql5" path="res://assets/icons/trash.svg" id="4_yi8ki"]
+
+[node name="PricingListItem" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("1_2p3od")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="IdLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SetDefaultButton" type="Button" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "default"
+icon = ExtResource("1_hhral")
+expand_icon = true
+
+[node name="EditButton" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "edit"
+icon = ExtResource("2_b0pd2")
+expand_icon = true
+
+[node name="RenameButton" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "rename"
+icon = ExtResource("3_v4574")
+expand_icon = true
+
+[node name="DeleteButton" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "delete"
+icon = ExtResource("4_yi8ki")
+expand_icon = true
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/SetDefaultButton" to="." method="_on_set_default_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/EditButton" to="." method="_on_edit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/RenameButton" to="." method="_on_rename_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/DeleteButton" to="." method="_on_delete_button_pressed"]

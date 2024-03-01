@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1ogftfb0tmhc"]
+
+[ext_resource type="Texture2D" uid="uid://c4twkal0jveqd" path="res://assets/icons/save.svg" id="1_36frt"]
+[ext_resource type="Script" path="res://ui/Pricing/GoodList/GoodList.gd" id="1_68dmy"]
+
+[node name="GoodList" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_68dmy")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="PricingIdLabel" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SaveButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+tooltip_text = "Save changes to this pricing"
+text = "save"
+icon = ExtResource("1_36frt")
+expand_icon = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GoodsContainer" type="VBoxContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="pressed" from="HBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]

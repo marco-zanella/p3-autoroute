@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://codnneuronewe"]
+
+[ext_resource type="Script" path="res://ui/RouteModels/Sucker/Sucker.gd" id="1_0kqkc"]
+[ext_resource type="PackedScene" uid="uid://0jwbsptq64e6" path="res://ui/RouteModels/GoodList/GoodList.tscn" id="1_j0kkx"]
+
+[node name="Sucker" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0kqkc")
+
+[node name="DescriptionLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+text = "Continuously buy goods from a town at specified price (or less), and stores them in the convoy.
+Select town to buy from, then enable goods to buy and set maximum price."
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TownLabel" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "Town:"
+
+[node name="TownOptionButton" type="OptionButton" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+alignment = 2
+
+[node name="GoodsLabel" type="Label" parent="."]
+layout_mode = 2
+text = "Goods:"
+
+[node name="GoodList" parent="." instance=ExtResource("1_j0kkx")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+show_buying_price = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 2
+
+[node name="CancelButton" type="Button" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "cancel"
+expand_icon = true
+
+[node name="ConfirmButton" type="Button" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "confirm"
+expand_icon = true
+
+[connection signal="pressed" from="HBoxContainer2/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="HBoxContainer2/ConfirmButton" to="." method="_on_confirm_button_pressed"]

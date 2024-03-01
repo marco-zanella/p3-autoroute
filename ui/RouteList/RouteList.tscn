@@ -1,0 +1,96 @@
+[gd_scene load_steps=5 format=3 uid="uid://cltktpk3lvkmv"]
+
+[ext_resource type="Script" path="res://ui/RouteList/RouteList.gd" id="1_neoar"]
+[ext_resource type="PackedScene" uid="uid://bcxohwhcdplut" path="res://ui/RouteNameDialog/RouteNameDialog.tscn" id="2_iy3rl"]
+[ext_resource type="Texture2D" uid="uid://u8mnfrigg8te" path="res://assets/icons/add.svg" id="2_vd762"]
+[ext_resource type="Texture2D" uid="uid://bmhicdvcv3b68" path="res://assets/icons/open.svg" id="3_eag1u"]
+
+[node name="RouteList" type="VBoxContainer"]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 139.0
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_neoar")
+
+[node name="SearchBox" type="LineEdit" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+tooltip_text = "Filter routes by their names"
+placeholder_text = "Search..."
+clear_button_enabled = true
+
+[node name="AvailableRoutesContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="AvailableRoutesLabel" type="Label" parent="AvailableRoutesContainer"]
+layout_mode = 2
+text = "Available routes: "
+
+[node name="RoutesNumberLabel" type="Label" parent="AvailableRoutesContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Routes" type="VBoxContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 2
+
+[node name="AddButton" type="Button" parent="HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+tooltip_text = "Add a new route"
+disabled = true
+text = "add"
+icon = ExtResource("2_vd762")
+expand_icon = true
+
+[node name="SelectFolder" type="Button" parent="HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+tooltip_text = "Open a route directory"
+text = "open"
+icon = ExtResource("3_eag1u")
+expand_icon = true
+
+[node name="FileDialog" type="FileDialog" parent="."]
+unique_name_in_owner = true
+title = "Open a Directory"
+size = Vector2i(457, 159)
+ok_button_text = "Select Current Folder"
+file_mode = 2
+access = 2
+use_native_dialog = true
+
+[node name="DeleteConfirmationDialog" type="ConfirmationDialog" parent="."]
+unique_name_in_owner = true
+initial_position = 2
+size = Vector2i(220, 100)
+ok_button_text = "Delete"
+dialog_text = "Confirm deletion of route?"
+
+[node name="RouteNameDialog" parent="." instance=ExtResource("2_iy3rl")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="text_changed" from="SearchBox" to="." method="_on_search_box_text_changed"]
+[connection signal="pressed" from="HBoxContainer2/AddButton" to="." method="_on_add_button_pressed"]
+[connection signal="pressed" from="HBoxContainer2/SelectFolder" to="." method="_on_select_folder_pressed"]
+[connection signal="dir_selected" from="FileDialog" to="." method="_on_file_dialog_dir_selected"]

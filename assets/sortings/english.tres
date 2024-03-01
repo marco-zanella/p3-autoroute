@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Sorting" load_steps=2 format=3 uid="uid://40fj0b18kvck"]
+
+[ext_resource type="Script" path="res://scripts/Sorting.gd" id="1_rpkc2"]
+
+[resource]
+script = ExtResource("1_rpkc2")
+id = "english"
+is_default = true
+goods = Array[int]([3, 19, 8, 2, 0, 17, 5, 12, 13, 1, 10, 16, 15, 18, 4, 9, 6, 11, 7, 14, 20, 21, 22, 23])

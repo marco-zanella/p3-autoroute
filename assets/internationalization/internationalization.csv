@@ -1,0 +1,95 @@
+keys,en,it
+Routes,Routes,Rotte
+Presets,Presets,Modelli
+Open Folder,Open Folder,Apri Cartella
+Show Routes,Show Routes,Mostra Rotte
+Close,Close,Chiudi
+Sorting,Sorting,Ordinamenti
+Prices,Prices,Prezzi
+add,add,crea
+open,open,apri
+Trade stops:,Trade stops:,Città:
+save,save,salva
+models,models,modelli
+edit,edit,apri
+rename,rename,rinomina
+duplicate,duplicate,duplica
+delete,delete,cancella
+Name of the route:,Name of the route:,Nome della rotta:
+cancel,cancel,annulla
+confirm,confirm,conferma
+none,none,nessuna
+buy,buy,compra
+sell,sell,vendi
+withdraw,withdraw,ritira
+deposit,deposit,depostita
+quantity,quantity,quantità
+dock,dock,usa
+repair,repair,ripara
+skip,skip,salta
+Edinburgh,Edinburgh,Edimburgo
+Scarborough,Scarborough,Scarborough
+London,London,Londra
+Burges,Burges,Bruges
+Groningen,Groningen,Groningen
+Cologne,Cologne,Coloia
+Bremen,Bremen,Brema
+Ripen,Ripen,Ripen
+Hamburg,Hamburg,Amburgo
+Luebeck,Luebeck,Lubeck
+Rostock,Rostock,Rostock
+Bergen,Bergen,Bergen
+Oslo,Oslo,Oslo
+Aalborg,Aalborg,Aalborg
+Malmo,Malmo,Malmo
+Stockholm,Stockholm,Stoccolma
+Visby,Visby,Visby
+Stettin,Stettin,Stettino
+Gdansk,Gdansk,Gdansk
+Torun,Torun,Thorn
+Riga,Riga,Riga
+Reval,Reval,Tallin
+Ladoga,Ladoga,Ladoga
+Novgorod,Novgorod,Novgorod
+Grain,Grain,Grano
+Meat,Meat,Carne
+Fish,Fish,Pesce
+Beer,Beer,Birra
+Salt,Salt,Sale
+Honey,Honey,Miele
+Spices,Spices,Spezie
+Wine,Wine,Vino
+Cloth,Cloth,Stoffe
+Skins,Skins,Pelli
+Oil,Oil,Olio
+Timber,Timber,Legno
+Iron Goods,Iron Goods,Utensili
+Leather,Leather,Cuoio
+Wool,Wool,Lana
+Pitch,Pitch,Pece
+Pig Iron,Pig Iron,Ferro
+Hemp,Hemp,Canapa
+Pottery,Pottery,Ceramiche
+Bricks,Bricks,Mattoni
+Sword,Sword,Spada
+Bow,Bow,Arco
+Crossbow,Crossbow,Balestra
+Carbine,Carbine,Moschetto
+ID of the pricing,ID of the pricing,ID del prezzo
+default,default,default
+Available pricings:,Available pricings:,Modelli di prezzo disponibili:
+buying,buying,acquista
+selling,selling,vendi
+buying ,buying ,acquista 
+selling ,selling ,vendi 
+ID of the sorting,ID of the sorting,ID dell'ordinamento
+Available sortings:,Available sortings:,Ordinamenti disponibili:
+Available routes: ,Available routes: ,Rotte disponibili: 
+Search...,Search...,Cerca...
+Town:,Town:,Città:
+Goods:,Goods:,Merci:
+Maximum goods:,Maximum goods:,Prodotti per regola:
+First town:,First town:,Prima città:
+Second town:,Second town,Seconda città:
+Load from first town:,Load from first town:,Carica dalla prima città:
+Load from second town:,Load from second town:,Carica dalla seconda città:

@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://eqxgu0hbvw72"]
+
+[ext_resource type="Script" path="res://ui/Pricing/PricingEditor/PricingEditor.gd" id="1_2lgl8"]
+[ext_resource type="PackedScene" uid="uid://dggc3gpncwcfa" path="res://ui/Pricing/PricingList/PricingList.tscn" id="1_c1sei"]
+[ext_resource type="PackedScene" uid="uid://b1ogftfb0tmhc" path="res://ui/Pricing/GoodList/GoodList.tscn" id="3_b5wko"]
+[ext_resource type="PackedScene" uid="uid://blvdqdm855bmd" path="res://ui/Pricing/PricingNameDialog/PricingNameDialog.tscn" id="3_cr0pb"]
+
+[node name="PricingEditor" type="HSplitContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2lgl8")
+
+[node name="PricingList" parent="." instance=ExtResource("1_c1sei")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GoodList" parent="." instance=ExtResource("3_b5wko")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PricingNameDialog" parent="." instance=ExtResource("3_cr0pb")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="created" from="PricingList" to="." method="_on_pricing_created"]
+[connection signal="deleted" from="PricingList" to="." method="_on_pricing_deleted"]
+[connection signal="rename" from="PricingList" to="." method="_on_pricing_renamed"]
+[connection signal="selected" from="PricingList" to="." method="_on_pricing_selected"]
+[connection signal="set_default" from="PricingList" to="." method="_on_pricing_set_default"]
+[connection signal="saved" from="GoodList" to="." method="_on_good_saved"]
+[connection signal="cancelled" from="PricingNameDialog" to="." method="_pricing_name_dialog_disconnect"]

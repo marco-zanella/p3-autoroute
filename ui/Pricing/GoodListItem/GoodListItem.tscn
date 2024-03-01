@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://nqy16vim5xb4"]
+
+[ext_resource type="Script" path="res://ui/Pricing/GoodListItem/GoodListItem.gd" id="1_0yj3f"]
+
+[node name="GoodListItem" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("1_0yj3f")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="GoodNameLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyingLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "buying "
+horizontal_alignment = 2
+
+[node name="BuyingSpinBox" type="SpinBox" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+tooltip_text = "Buying price"
+max_value = 9999.0
+value = 1.0
+alignment = 2
+
+[node name="SellingLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "selling "
+horizontal_alignment = 2
+
+[node name="SellingSpinBox" type="SpinBox" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+tooltip_text = "Selling price"
+max_value = 9999.0
+value = 1.0
+alignment = 2
+
+[connection signal="value_changed" from="MarginContainer/HBoxContainer/BuyingSpinBox" to="." method="_on_buying_spin_box_value_changed"]
+[connection signal="value_changed" from="MarginContainer/HBoxContainer/SellingSpinBox" to="." method="_on_selling_spin_box_value_changed"]
