@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="Sorting" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="Sorting" load_steps=2 format=3 uid="uid://3a7lnl3d30bq"]
 
-[ext_resource type="Script" path="res://scripts/Sorting.gd" id="1_nmtil"]
+[ext_resource type="Script" uid="uid://c4m8yuh1rfvwy" path="res://scripts/Sorting.gd" id="1_nmtil"]
 
 [resource]
 script = ExtResource("1_nmtil")

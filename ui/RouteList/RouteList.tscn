@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cltktpk3lvkmv"]
 
-[ext_resource type="Script" path="res://ui/RouteList/RouteList.gd" id="1_neoar"]
+[ext_resource type="Script" uid="uid://diwyxyws8lqnv" path="res://ui/RouteList/RouteList.gd" id="1_neoar"]
 [ext_resource type="PackedScene" uid="uid://bcxohwhcdplut" path="res://ui/RouteNameDialog/RouteNameDialog.tscn" id="2_iy3rl"]
 [ext_resource type="Texture2D" uid="uid://u8mnfrigg8te" path="res://assets/icons/add.svg" id="2_vd762"]
 [ext_resource type="Texture2D" uid="uid://bmhicdvcv3b68" path="res://assets/icons/open.svg" id="3_eag1u"]

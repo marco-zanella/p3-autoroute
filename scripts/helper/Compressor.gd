@@ -57,21 +57,21 @@ func encode(data: PackedByteArray) -> PackedByteArray:
 
 func decode(data: PackedByteArray) -> PackedByteArray:
 	var reader = BitReader.from_bit_array(BitArray.from_byte_array(data))
-	var length = reader.read_usnigned(32)
+	var length = reader.read_unsigned(32)
 	var output: PackedByteArray = []
 	while output.size() < length:
 		# Reads compressed data
-		if reader.read_usnigned(1) == 1:
-			var compressed_chunk_type = reader.read_usnigned(3)
+		if reader.read_unsigned(1) == 1:
+			var compressed_chunk_type = reader.read_unsigned(3)
 			var compressed_chunk_length = decompress_table[compressed_chunk_type].field_0
-			var compressed_chunk = reader.read_usnigned(compressed_chunk_length)
+			var compressed_chunk = reader.read_unsigned(compressed_chunk_length)
 			var negated_value = decompress_table[compressed_chunk_type].field_4 + (bitmask_table_1[compressed_chunk_type] & compressed_chunk)
 			var offset = ~negated_value
 			var elements = 1
 			var output_elements = 2
 			while true:
 				elements += 1
-				var compressed_data = reader.read_usnigned(elements)
+				var compressed_data = reader.read_unsigned(elements)
 				var compressed_elements = bitmask_table_1[elements] & compressed_data
 				output_elements += compressed_elements
 				if compressed_elements != bitmask_table_2[elements]:
@@ -82,6 +82,6 @@ func decode(data: PackedByteArray) -> PackedByteArray:
 				output.append(value)
 		# Reads uncompressed data
 		else:
-			var value = reader.read_usnigned(8)
+			var value = reader.read_unsigned(8)
 			output.append(value)
 	return output

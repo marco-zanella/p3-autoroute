@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://hxf2ymxhoqmc"]
 
-[ext_resource type="Script" path="res://ui/RuleItem/RuleItem.gd" id="1_ddyki"]
+[ext_resource type="Script" uid="uid://bcohl82hmkkt" path="res://ui/RuleItem/RuleItem.gd" id="1_ddyki"]
 [ext_resource type="Texture2D" uid="uid://dy2yjri7rutd8" path="res://assets/icons/hamburger.svg" id="2_ox5ew"]
 
 [node name="Rule" type="PanelContainer"]

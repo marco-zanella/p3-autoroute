@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://bj7ed8b2v65"]
 
 [ext_resource type="PackedScene" uid="uid://cltktpk3lvkmv" path="res://ui/RouteList/RouteList.tscn" id="1_txj6x"]
-[ext_resource type="Script" path="res://ui/RouteEditor/RouteEditor.gd" id="1_yu3od"]
+[ext_resource type="Script" uid="uid://chepfd1h2ek0b" path="res://ui/RouteEditor/RouteEditor.gd" id="1_yu3od"]
 [ext_resource type="PackedScene" uid="uid://cqjisq4govx0l" path="res://ui/RouteInfo/RouteInfo.tscn" id="2_x4hqf"]
 [ext_resource type="PackedScene" uid="uid://co7mmgvm0rcoq" path="res://ui/RuleInfo/RuleInfo.tscn" id="3_31irh"]
-[ext_resource type="Script" path="res://ui/RouteEditor/RouteBinaryMapperNode.gd" id="5_x2oq4"]
+[ext_resource type="Script" uid="uid://dkkrjtcr5p7o5" path="res://ui/RouteEditor/RouteBinaryMapperNode.gd" id="5_x2oq4"]
 
 [node name="RouteEditor" type="HSplitContainer"]
 anchors_preset = 15

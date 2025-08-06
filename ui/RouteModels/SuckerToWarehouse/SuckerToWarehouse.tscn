@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b08v58hlvri7c"]
 
-[ext_resource type="Script" path="res://ui/RouteModels/SuckerToWarehouse/SuckerToWarehouse.gd" id="1_y13yu"]
+[ext_resource type="Script" uid="uid://davm0g86lv7c0" path="res://ui/RouteModels/SuckerToWarehouse/SuckerToWarehouse.gd" id="1_y13yu"]
 [ext_resource type="PackedScene" uid="uid://0jwbsptq64e6" path="res://ui/RouteModels/GoodList/GoodList.tscn" id="2_aynp8"]
 
 [node name="SuckerToWarehouse" type="VBoxContainer"]

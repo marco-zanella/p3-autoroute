@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://codnneuronewe"]
 
-[ext_resource type="Script" path="res://ui/RouteModels/Sucker/Sucker.gd" id="1_0kqkc"]
+[ext_resource type="Script" uid="uid://dq20v8o3nmumd" path="res://ui/RouteModels/Sucker/Sucker.gd" id="1_0kqkc"]
 [ext_resource type="PackedScene" uid="uid://0jwbsptq64e6" path="res://ui/RouteModels/GoodList/GoodList.tscn" id="1_j0kkx"]
 
 [node name="Sucker" type="VBoxContainer"]

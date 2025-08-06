@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bcxohwhcdplut"]
 
-[ext_resource type="Script" path="res://ui/RouteNameDialog/RouteNameDialog.gd" id="1_6mr6k"]
+[ext_resource type="Script" uid="uid://dhbqy8tyolj60" path="res://ui/RouteNameDialog/RouteNameDialog.gd" id="1_6mr6k"]
 
 [node name="RouteNameDialog" type="Window"]
 title = "Name of Route"

@@ -17,7 +17,7 @@ An auto route can have up to 20 stops, each occupying 220 bytes mapped as follow
 | -----: | ----------: | ----------- |
 |   0x00 |           2 | Unknown, apparently always `0`, maybe used to keep memory aligned
 |   0x02 |           1 | Town id, see [Identifiers of Towns](#identifiers-of-towns)
-|   0x03 |           1 | Whether to dock in town (`0x00`), use for repair (`0x01`) or skip (`0x09`); if town if first of the list tird bit is on (values become `0x04`, `0x05`, `0x0d`)
+|   0x03 |           1 | Whether to dock in town (`0x00`), use for repair (`0x01`) or skip (`0x09`); if town is the first of the list, third bit is on (values become `0x04`, `0x05`, `0x0d`)
 |   0x04 |        0x18 | Sorting array for the 24 goods, each element being a single byte representing a good id, see [Identifiers and Size of Goods](#identifiers-and-size-of-goods)
 |   0x1c |        0x60 | Price array for the 24 goods, each element being a signed 32 bit integer, positive mean selling to the town, negative means buying from the town
 |   0x7c |        0x60 | Quantity array for the 24 goods, each element being a signed 32 integer, positive means selling to the town (if price is positive), buying from the town (if price is negative) or withdrawing from the warehouse (if price is `0`), negative means storing into the warehouse (if price is `0`)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://eqxgu0hbvw72"]
 
-[ext_resource type="Script" path="res://ui/Pricing/PricingEditor/PricingEditor.gd" id="1_2lgl8"]
+[ext_resource type="Script" uid="uid://bnh6m48k05fy6" path="res://ui/Pricing/PricingEditor/PricingEditor.gd" id="1_2lgl8"]
 [ext_resource type="PackedScene" uid="uid://dggc3gpncwcfa" path="res://ui/Pricing/PricingList/PricingList.tscn" id="1_c1sei"]
 [ext_resource type="PackedScene" uid="uid://b1ogftfb0tmhc" path="res://ui/Pricing/GoodList/GoodList.tscn" id="3_b5wko"]
 [ext_resource type="PackedScene" uid="uid://blvdqdm855bmd" path="res://ui/Pricing/PricingNameDialog/PricingNameDialog.tscn" id="3_cr0pb"]

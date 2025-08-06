@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dggc3gpncwcfa"]
 
 [ext_resource type="Texture2D" uid="uid://u8mnfrigg8te" path="res://assets/icons/add.svg" id="1_awhjx"]
-[ext_resource type="Script" path="res://ui/Pricing/PricingList/PricingList.gd" id="1_g5o5y"]
+[ext_resource type="Script" uid="uid://dtwni0d35fde3" path="res://ui/Pricing/PricingList/PricingList.gd" id="1_g5o5y"]
 
 [node name="PricingList" type="VBoxContainer"]
 anchors_preset = 15

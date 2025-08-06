@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b2ilhl36ywtp6"]
 
-[ext_resource type="Script" path="res://ui/TradeStop/TradeStop.gd" id="1_bxlvv"]
+[ext_resource type="Script" uid="uid://dhpdowp6m0esr" path="res://ui/TradeStop/TradeStop.gd" id="1_bxlvv"]
 [ext_resource type="Texture2D" uid="uid://dy2yjri7rutd8" path="res://assets/icons/hamburger.svg" id="2_cdst2"]
 [ext_resource type="Texture2D" uid="uid://bv2t4opxlbjug" path="res://assets/icons/edit.svg" id="3_g76rl"]
 [ext_resource type="Texture2D" uid="uid://dl5fcna2x8ql5" path="res://assets/icons/trash.svg" id="4_1ho2g"]

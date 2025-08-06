@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cxakq7ra43p0"]
 
-[ext_resource type="Script" path="res://ui/Sorting/SortingNameDialog/SortingNameDialog.gd" id="1_k6t77"]
+[ext_resource type="Script" uid="uid://bfrwdai7fcjoo" path="res://ui/Sorting/SortingNameDialog/SortingNameDialog.gd" id="1_k6t77"]
 
 [node name="SortingNameDialog" type="Window"]
 title = "ID of the sorting"

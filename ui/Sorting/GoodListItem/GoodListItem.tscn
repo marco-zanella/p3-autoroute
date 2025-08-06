@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bf75k0bajpbj4"]
 
-[ext_resource type="Script" path="res://ui/Sorting/GoodListItem/GoodListItem.gd" id="1_i7xqd"]
+[ext_resource type="Script" uid="uid://bx0ffeg0j7u4r" path="res://ui/Sorting/GoodListItem/GoodListItem.gd" id="1_i7xqd"]
 [ext_resource type="Texture2D" uid="uid://dy2yjri7rutd8" path="res://assets/icons/hamburger.svg" id="1_ijibp"]
 
 [node name="GoodListItem" type="PanelContainer"]

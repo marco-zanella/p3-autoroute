@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cwkbg55jxsf08"]
 
-[ext_resource type="Script" path="res://ui/MainMenuBar/MainMenuBar.gd" id="1_uv8x8"]
+[ext_resource type="Script" uid="uid://cnsdwpn38dbyr" path="res://ui/MainMenuBar/MainMenuBar.gd" id="1_uv8x8"]
 
 [node name="MainMenuBar" type="MenuBar"]
 anchors_preset = 10

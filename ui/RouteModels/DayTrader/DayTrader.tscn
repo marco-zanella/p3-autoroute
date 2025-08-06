@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://clk3s34ps84o"]
 
-[ext_resource type="Script" path="res://ui/RouteModels/DayTrader/DayTrader.gd" id="1_aa737"]
+[ext_resource type="Script" uid="uid://cg8sjlsktxk2k" path="res://ui/RouteModels/DayTrader/DayTrader.gd" id="1_aa737"]
 [ext_resource type="PackedScene" uid="uid://0jwbsptq64e6" path="res://ui/RouteModels/GoodList/GoodList.tscn" id="2_2vqgk"]
 
 [node name="DayTrader" type="VBoxContainer"]

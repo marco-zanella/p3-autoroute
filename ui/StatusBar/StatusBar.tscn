@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cbapphjxv3lcx"]
 
-[ext_resource type="Script" path="res://ui/StatusBar/StatusBar.gd" id="1_7ftvy"]
+[ext_resource type="Script" uid="uid://cxymsamd7vwo2" path="res://ui/StatusBar/StatusBar.gd" id="1_7ftvy"]
 
 [node name="StatusBar" type="MarginContainer"]
 anchors_preset = 10

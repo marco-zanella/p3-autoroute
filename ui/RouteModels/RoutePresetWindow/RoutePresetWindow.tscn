@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dmlvshhhaf1t7"]
 
-[ext_resource type="Script" path="res://ui/RouteModels/RoutePresetWindow/RoutePresetWindow.gd" id="1_hxgoh"]
+[ext_resource type="Script" uid="uid://h1guaxds3yva" path="res://ui/RouteModels/RoutePresetWindow/RoutePresetWindow.gd" id="1_hxgoh"]
 [ext_resource type="PackedScene" uid="uid://codnneuronewe" path="res://ui/RouteModels/Sucker/Sucker.tscn" id="2_1ea2j"]
 [ext_resource type="PackedScene" uid="uid://b08v58hlvri7c" path="res://ui/RouteModels/SuckerToWarehouse/SuckerToWarehouse.tscn" id="3_ubegj"]
 [ext_resource type="PackedScene" uid="uid://clk3s34ps84o" path="res://ui/RouteModels/DayTrader/DayTrader.tscn" id="4_7q8x0"]

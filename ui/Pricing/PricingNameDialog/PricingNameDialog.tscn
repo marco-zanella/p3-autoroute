@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://blvdqdm855bmd"]
 
-[ext_resource type="Script" path="res://ui/Pricing/PricingNameDialog/PricingNameDialog.gd" id="1_irinh"]
+[ext_resource type="Script" uid="uid://b22eudvcyen7e" path="res://ui/Pricing/PricingNameDialog/PricingNameDialog.gd" id="1_irinh"]
 
 [node name="PricingNameDialog" type="Window"]
 title = "ID of the pricing"

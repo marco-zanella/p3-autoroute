@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://da6lrjk88vu0u"]
 
-[ext_resource type="Script" path="res://ui/RouteModels/Seller/Seller.gd" id="1_2sidh"]
+[ext_resource type="Script" uid="uid://b2sryw7sntb85" path="res://ui/RouteModels/Seller/Seller.gd" id="1_2sidh"]
 [ext_resource type="PackedScene" uid="uid://0jwbsptq64e6" path="res://ui/RouteModels/GoodList/GoodList.tscn" id="2_tkmik"]
 
 [node name="Seller" type="VBoxContainer"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ehnk3piqkvfo"]
 
-[ext_resource type="Script" path="res://ui/Sorting/SortingList/SortingList.gd" id="1_4jq3n"]
+[ext_resource type="Script" uid="uid://cjk27p1hysy0t" path="res://ui/Sorting/SortingList/SortingList.gd" id="1_4jq3n"]
 [ext_resource type="Texture2D" uid="uid://u8mnfrigg8te" path="res://assets/icons/add.svg" id="1_lya36"]
 
 [node name="SortingList" type="VBoxContainer"]

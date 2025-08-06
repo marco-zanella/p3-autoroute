@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://0jwbsptq64e6"]
 
-[ext_resource type="Script" path="res://ui/RouteModels/GoodList/GoodList.gd" id="1_rl6w3"]
+[ext_resource type="Script" uid="uid://d35dwhdu5nkfn" path="res://ui/RouteModels/GoodList/GoodList.gd" id="1_rl6w3"]
 
 [node name="GoodList" type="ScrollContainer"]
 anchors_preset = 15

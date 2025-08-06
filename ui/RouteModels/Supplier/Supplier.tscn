@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bo0dd82a5sc0"]
 
-[ext_resource type="Script" path="res://ui/RouteModels/Supplier/Supplier.gd" id="1_gmqrl"]
+[ext_resource type="Script" uid="uid://ddncibijwp3m4" path="res://ui/RouteModels/Supplier/Supplier.gd" id="1_gmqrl"]
 [ext_resource type="PackedScene" uid="uid://0jwbsptq64e6" path="res://ui/RouteModels/GoodList/GoodList.tscn" id="2_ell3e"]
 
 [node name="Supplier" type="VBoxContainer"]

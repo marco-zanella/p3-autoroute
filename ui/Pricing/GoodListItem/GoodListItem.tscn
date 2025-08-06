@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://nqy16vim5xb4"]
 
-[ext_resource type="Script" path="res://ui/Pricing/GoodListItem/GoodListItem.gd" id="1_0yj3f"]
+[ext_resource type="Script" uid="uid://ckkikomhb7llf" path="res://ui/Pricing/GoodListItem/GoodListItem.gd" id="1_0yj3f"]
 
 [node name="GoodListItem" type="PanelContainer"]
 anchors_preset = 10

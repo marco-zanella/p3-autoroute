@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://co7mmgvm0rcoq"]
 
 [ext_resource type="Texture2D" uid="uid://da3m42wimljk6" path="res://assets/icons/left-arrow.svg" id="1_5vswj"]
-[ext_resource type="Script" path="res://ui/RuleInfo/RuleInfo.gd" id="1_bp0wm"]
+[ext_resource type="Script" uid="uid://ctcc88nn48g5f" path="res://ui/RuleInfo/RuleInfo.gd" id="1_bp0wm"]
 
 [node name="RuleInfo" type="VBoxContainer"]
 anchors_preset = 15

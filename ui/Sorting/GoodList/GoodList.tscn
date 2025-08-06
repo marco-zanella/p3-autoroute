@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cydwf2wib3wkb"]
 
 [ext_resource type="Texture2D" uid="uid://c4twkal0jveqd" path="res://assets/icons/save.svg" id="1_fy17u"]
-[ext_resource type="Script" path="res://ui/Sorting/GoodList/GoodList.gd" id="1_u3blq"]
+[ext_resource type="Script" uid="uid://kobvnv3ldkqu" path="res://ui/Sorting/GoodList/GoodList.gd" id="1_u3blq"]
 
 [node name="GoodList" type="VBoxContainer"]
 anchors_preset = 15

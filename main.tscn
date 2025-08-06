@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://cxjsulxsbpoig"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_2ak4x"]
+[ext_resource type="Script" uid="uid://jr80dwksj1dd" path="res://main.gd" id="1_2ak4x"]
 [ext_resource type="PackedScene" uid="uid://cwkbg55jxsf08" path="res://ui/MainMenuBar/MainMenuBar.tscn" id="2_qcu5t"]
 [ext_resource type="PackedScene" uid="uid://bj7ed8b2v65" path="res://ui/RouteEditor/RouteEditor.tscn" id="3_ip0na"]
 [ext_resource type="PackedScene" uid="uid://bovlwnyl73st6" path="res://ui/Sorting/SortingEditor/SortingEditor.tscn" id="4_taav4"]
 [ext_resource type="PackedScene" uid="uid://cbapphjxv3lcx" path="res://ui/StatusBar/StatusBar.tscn" id="5_lf6qy"]
 [ext_resource type="PackedScene" uid="uid://eqxgu0hbvw72" path="res://ui/Pricing/PricingEditor/PricingEditor.tscn" id="5_nigvd"]
-[ext_resource type="Script" path="res://ui/Sorting/SortingManager/SortingManager.gd" id="6_7b1yx"]
-[ext_resource type="Script" path="res://ui/Pricing/PricingManager/PricingManager.gd" id="8_1bpn4"]
+[ext_resource type="Script" uid="uid://dln4e4wgnalr0" path="res://ui/Sorting/SortingManager/SortingManager.gd" id="6_7b1yx"]
+[ext_resource type="Script" uid="uid://d25enoqjk3oog" path="res://ui/Pricing/PricingManager/PricingManager.gd" id="8_1bpn4"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -41,6 +41,7 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+current_tab = 0
 tabs_visible = false
 
 [node name="RouteContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Content"]
@@ -49,6 +50,7 @@ theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
+metadata/_tab_index = 0
 
 [node name="RouteEditor" parent="MarginContainer/VBoxContainer/Content/RouteContainer" node_paths=PackedStringArray("sorting_manager", "pricing_manager") instance=ExtResource("3_ip0na")]
 unique_name_in_owner = true
@@ -63,6 +65,7 @@ theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
+metadata/_tab_index = 1
 
 [node name="SortingEditor" parent="MarginContainer/VBoxContainer/Content/SortingContainer" node_paths=PackedStringArray("sorting_manager") instance=ExtResource("4_taav4")]
 layout_mode = 2
@@ -75,6 +78,7 @@ theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
+metadata/_tab_index = 2
 
 [node name="PricingEditor" parent="MarginContainer/VBoxContainer/Content/PricingContainer" node_paths=PackedStringArray("pricing_manager") instance=ExtResource("5_nigvd")]
 layout_mode = 2
