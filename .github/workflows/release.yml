@@ -4,10 +4,12 @@ on:
   release:
     types: [created]
 
+permissions:
+  contents: write
+
 env:
   PROJECT_NAME: "Patrician 3 Auto Route Editor"
   GODOT_VERSION: 4.4.1
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   Export:
@@ -43,8 +45,6 @@ jobs:
         ./godot --headless --path ./ --export-release "Windows Desktop" "./exports/${{ env.PROJECT_NAME }}.exe"
 
     - name: Upload to GitHub Release
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       with:
         files: ./exports/${{ env.PROJECT_NAME }}.exe
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

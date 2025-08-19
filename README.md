@@ -13,6 +13,9 @@ You have two options to run it:
 2. **Run from source with Godot**  
    If you prefer (or are not on Windows), you can open the project directly in [Godot Engine](https://godotengine.org/) (version 4.4.1 or later) and run it from there.
 
+### Note on Windows Defender
+When running the `.exe` on Windows, you may see a warning like *"Windows protected your PC"* or *"Unknown publisher"*. This is expected because the program is not code-signed with a certificate. You can safely bypass the warning by clicking **More info** and then **Run anyway**. If you prefer, you can also build the tool yourself from source using Godot.
+
 
 ## Usage
 Editor allows to open an auto route folder, create, edit and delete routes for Patrician III. Editor also supports custom pricing policies, sorting of goods and application of presets for routes.
