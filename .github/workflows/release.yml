@@ -46,7 +46,7 @@ jobs:
   - name: Export Windows Desktop
     run: |
      mkdir -p ./exports
-     ./godot --headless --path ./ --export-release "Windows Desktop" ./exports/${{ env.PROJECT_NAME }}.exe
+     ./godot --headless --path ./ --export-release "Windows Desktop" "./exports/${{ env.PROJECT_NAME }}.exe"
 
   - uses: actions/upload-artifact@v4
     with:
