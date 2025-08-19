@@ -1,0 +1,50 @@
+name: Export
+
+on:
+  release:
+    types: [created]
+
+env:
+  PROJECT_NAME: "Patrician 3 Auto Route Editor"
+  GODOT_VERSION: 4.4.1
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  Export:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Download + Authorize Godot
+      run: |
+        curl -L -o godot.zip https://github.com/godotengine/godot/releases/download/${{ env.GODOT_VERSION }}-stable/Godot_v${{ env.GODOT_VERSION }}-stable_linux.x86_64.zip
+        unzip godot.zip
+        mv Godot_v${{ env.GODOT_VERSION }}-stable_linux.x86_64 godot
+        ls
+        chmod +x godot
+       
+    - name: Download Export Templates
+      run: |
+        curl -L -o export_templates.zip https://github.com/godotengine/godot/releases/download/${{ env.GODOT_VERSION }}-stable/Godot_v${{ env.GODOT_VERSION }}-stable_export_templates.tpz
+        unzip export_templates.zip
+  
+    - name: Install Export Templates
+      run: |
+        mkdir -p ~/.local/share/godot/export_templates/${{ env.GODOT_VERSION }}.stable
+        mv ./templates/* ~/.local/share/godot/export_templates/${{ env.GODOT_VERSION }}.stable
+
+    - name: Import Project
+      run: |
+        ./godot --headless -e --quit --path ./
+
+    - name: Export Windows Desktop
+      run: |
+        mkdir -p ./exports
+        ./godot --headless --path ./ --export-release "Windows Desktop" "./exports/${{ env.PROJECT_NAME }}.exe"
+
+    - name: Upload to GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: ./exports/${{ env.PROJECT_NAME }}.exe
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
