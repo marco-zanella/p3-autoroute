@@ -4,6 +4,16 @@ Auto route editor for Patrician III. This tool allows to open, edit, create and 
 ## Installation
 Editor runs as a standalone program and does not require installation nor additional dependencies.
 
+You have two options to run it:
+
+1. **Download the prebuilt executable**  
+   Go to the [Releases](https://github.com/marco-zanella/p3-autoroute/releases) page and download the latest `.exe` file.  
+   This is the easiest way — just download and run it.
+
+2. **Run from source with Godot**  
+   If you prefer (or are not on Windows), you can open the project directly in [Godot Engine](https://godotengine.org/) (version 4.4.1 or later) and run it from there.
+
+
 ## Usage
 Editor allows to open an auto route folder, create, edit and delete routes for Patrician III. Editor also supports custom pricing policies, sorting of goods and application of presets for routes.
 
